@@ -1,0 +1,762 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<link rel="stylesheet" href="https://ecs.wgtn.ac.nz/foswiki/pub/System/HeadlinesPlugin/style.css" type="text/css" media="all" />
+<title>   ML Assign 1 - Courses/ENGR110_2022T2 | ECS | Victoria University of Wellington</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="/foswiki/bin/edit/Courses/ENGR110_2022T2/MLAssign1?t=1659948124" type="application/x-wiki" title="edit MLAssign1" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/Courses/ENGR110_2022T2/WebRss" />
+<base href="https://ecs.wgtn.ac.nz/Courses/ENGR110_2022T2/MLAssign1" /><!--[if IE]></base><![endif]-->
+<link class='head IMAGEPLUGIN' rel="stylesheet" href="/foswiki/pub/System/ImagePlugin/style.css" type="text/css" media="all" /><!--IMAGEPLUGIN-->
+<link class='head JQUERYPLUGIN::TWISTY' rel='stylesheet' href='/foswiki/pub/System/TwistyPlugin/twisty.css?version=1.6.0' type='text/css' media='all' /><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link class='head SMILIESPLUGIN' rel='stylesheet' href='/foswiki/pub/System/SmiliesPlugin/smilies.css' type='text/css' media='all' /><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tableMLAssign13 td {vertical-align:middle; vertical-align:top}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol0 {text-align:left}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol1 {text-align:left}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol2 {text-align:left}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol3 {text-align:right}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol4 {text-align:left}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol5 {text-align:left}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol6 {text-align:left}
+body .foswikiTable#tableMLAssign13 td.foswikiTableCol7 {text-align:left}
+body .foswikiTable#tableMLAssign13 th {vertical-align:middle; background-color:#ffffff; color:#0066cc; text-align:left}
+body .foswikiTable#tableMLAssign13 th a:link {color:#0066cc}
+body .foswikiTable#tableMLAssign13 th a:visited {color:#0066cc}
+body .foswikiTable#tableMLAssign13 th a:hover {color:#0066cc; background-color:#ffffff}
+body .foswikiTable#tableMLAssign13 th.foswikiSortedCol {background-color:#eeeeee}
+body .foswikiTable#tableMLAssign13 tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable#tableMLAssign13 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f5f5f5}
+</style><!--TABLEPLUGIN_specific-->
+<link rel='stylesheet' href='/foswiki/pub/System/SkinTemplates/base.css' media='all' type='text/css' />
+<link rel='stylesheet' href='/foswiki/pub/System/PatternSkinTheme/layout.css' media='all' type='text/css' />
+<link rel='stylesheet' href='/foswiki/pub/System/PatternSkinTheme/style.css' media='all' type='text/css' />
+<link rel='stylesheet' href='/foswiki/pub/System/PatternSkinTheme/colors.css' media='all' type='text/css' />
+<link rel='stylesheet' href='/foswiki/pub/System/PatternSkinTheme/column_left.css' media='all' type='text/css' />
+<link rel='stylesheet' href='/foswiki/pub/System/PatternSkinTheme/variant_foswiki_noframe.css' media='all' type='text/css' />
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .foswikiTopRow,
+	.patternWebIndicator,
+	.patternWebIndicator a {
+		background-color:#6633CC;
+	}
+	#patternTopBarContents { background-image:url(/foswiki/pub/System/PatternSkin/header5.gif); background-repeat:repeat-x;}
+#patternTopBarContents { background-color:#ffffff;}
+.patternBookView {
+	border-color:#6633CC;
+}
+.patternPreviewPage #patternMain {
+	/* uncomment to set the preview image */
+	/*background-image:url("/foswiki/pub/System/PreviewBackground/preview2bg.gif");*/
+}
+</style>
+<link rel='stylesheet' href='/foswiki/pub/System/PatternSkin/print.css' media='print' type='text/css' />
+
+<link rel="stylesheet" href="/vic-ui-kit/css/toolkit.min.css">
+<link rel="stylesheet" href="/vic-ui-kit/css/foswiki.css">
+
+<script class='script JQUERYPLUGIN' src='/foswiki/pub/System/JQueryPlugin/jquery-2.2.4.js'></script><!--JQUERYPLUGIN-->
+<script class='script JQUERYPLUGIN::OBSERVER' src='/foswiki/pub/System/JQueryPlugin/plugins/observer/observer.js?version=0.1'></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class='script JQUERYPLUGIN::MIGRATE' src='/foswiki/pub/System/JQueryPlugin/plugins/migrate/jquery.migrate.js?version=3.3.1'></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class='script JQUERYPLUGIN::FOSWIKI' src='/foswiki/pub/System/JQueryPlugin/plugins/foswiki/jquery.foswiki.js?version=3.01'></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class='script JQUERYPLUGIN::BROWSER' src='/foswiki/pub/System/JQueryPlugin/plugins/browser/jquery.browser.js?version=0.1.0'></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::METADATA' src='/foswiki/pub/System/JQueryPlugin/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55'></script><!--JQUERYPLUGIN::METADATA-->
+<script class='script JQUERYPLUGIN::CHILI' src='/foswiki/pub/System/JQueryPlugin/plugins/chili/jquery.chili.js?version=2.2_1'></script>
+<script class='script JQUERYPLUGIN::CHILI' src='/foswiki/pub/System/JQueryPlugin/plugins/chili/jquery.chili.init.js?version=2.2_1'></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {
+      "view" : ""
+   },
+   "USERNAME" : "greenthom",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SERVERTIME" : "08 Aug 2022 - 20:42",
+   "WIKINAME" : "greenthom",
+   "USERSWEB" : "Main",
+   "SCRIPTSUFFIX" : "",
+   "PUBURL" : "https://ecs.wgtn.ac.nz/foswiki/pub",
+   "SCRIPTURL" : "https://ecs.wgtn.ac.nz/foswiki/bin",
+   "TOPIC" : "MLAssign1",
+   "WIKIUSERNAME" : "Main.greenthom",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "WEB" : "Courses/ENGR110_2022T2",
+   "SKIN" : "vuwecsv2, pattern ",
+   "URLHOST" : "https://ecs.wgtn.ac.nz",
+   "COOKIEREALM" : "",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class='script JavascriptFiles/foswikiString' type="text/javascript" src="/foswiki/pub/System/JavascriptFiles/foswikiString.js"></script><!--JavascriptFiles/foswikiString-->
+<script class='script JavascriptFiles/foswikiPref' type="text/javascript" src="/foswiki/pub/System/JavascriptFiles/foswikiPref.js"></script><!--JavascriptFiles/foswikiPref-->
+<script class='script JQUERYPLUGIN::TWISTY' src='/foswiki/pub/System/TwistyPlugin/jquery.twisty.js?version=1.6.0'></script><!--JQUERYPLUGIN::TWISTY-->
+<script class='script JavascriptFiles/foswikiForm' type="text/javascript" src="/foswiki/pub/System/JavascriptFiles/foswikiForm.js"></script><!--JavascriptFiles/foswikiForm-->
+<script class='script PatternSkin/pattern' type="text/javascript" src="/foswiki/pub/System/PatternSkin/pattern.js"></script><!--PatternSkin/pattern-->
+</head> 
+<body class="foswikiNoJs patternViewPage foswikiHasNoChangePermission foswikiLoggedIn">
+<span id="PageTop"></span>
+<div class="global" id="global-nav">
+  <div class="menu-toggle horisontal-links">
+	 <a href="https://www.wgtn.ac.nz">
+		<div class="logo-mini">&nbsp;</div>
+	 </a>
+	 <a href="javascript:void(0);" class="js-toggle-global-nav" role="button" aria-label="Toggle Navigation">
+		<span class="tcon tcon-menu--xcross" aria-label="toggle menu" style="float:right;">
+		  <span class="tcon-menu__lines" aria-hidden="true"></span>
+		  <span class="tcon-visuallyhidden">toggle menu</span>
+		</span>
+	 </a>
+  </div>
+  <div class="menu">
+	 <nav>
+		<div class="search">
+		  <form method="get" action="https://www.wgtn.ac.nz/search">
+			 <div role="search">
+				<a href="javascript:void(0);" class="js-toggle-global-search hide-on-mobile">
+				  <span class="tcon tcon-search--xcross " aria-label="toggle search">
+					 <span class="tcon-search__item" aria-hidden="true"></span>
+					 <span class="tcon-visuallyhidden">toggle search</span>
+				  </span>
+				</a>
+				<label class="input-wrapper -icon-search" id="global-search">
+				  <input autocomplete="off" name="q" placeholder="Search for…" required="" type="text">
+				  <input value="Go" type="submit">
+				</label>
+			 </div>
+		  </form>
+		  <div class="horisontal-links align-center hide-on-desktop">
+			 <a href="https://www.wgtn.ac.nz"><span class="icon-home"></span>Home</a>
+			 <a href="https://www.wgtn.ac.nz/about/contacts"><span class="icon-phone"></span>Contact</a>
+		  </div>
+		</div>
+		<div id="menu">
+		  <a href="https://www.wgtn.ac.nz" class="home">
+			 <span class="icon-home hanging-icon"></span>
+			 <span class="hide-on-desktop">Victoria's main site</span>
+		  </a>
+		  <a href="https://www.wgtn.ac.nz/study">Future students</a>
+		  <a href="https://www.wgtn.ac.nz/international">International students</a>
+		  <a href="https://www.wgtn.ac.nz/students">Current students</a>
+		  <a href="https://www.wgtn.ac.nz/research">Research</a>
+		  <a href="https://www.wgtn.ac.nz/about">About the University</a>
+		  <a href="/logout?ReturnUrl=https:%2f%2fecs.wgtn.ac.nz%2fCourses%2fENGR110_2022T2%2fMLAssign1">Log Out (greenthom)</a>
+		</div>
+	 </nav>
+	 <nav class="site" role="navigation">
+		<a href="https://www.wgtn.ac.nz/ecs" class="back hide-on-desktop">
+		  <span class="icon-back hanging-icon"></span>
+		  <div class="">
+			 <div>School of Engineering and Computer Science</div>
+			 <div lang="mi">Te Kura Mātai Pūkaha, Pūrorohiko</div>
+		  </div>
+		</a>
+		<ul>
+		  <li>
+			 <ul>
+				<li><a class="foswikiCurrentWebHomeLink" href="/Courses/ENGR110_2022T2/WebHome">ENGR110 home</a> <ul>
+<li> <a href="/Courses/ENGR110_2022T2/CourseOutline">Course Outline</a>
+</li> <li> <a href="https://ecs.wgtn.ac.nz/Courses/ENGR110_2022T2/WeeklyTimeTable">TimeTable</a>
+</li> <li> <a href="/Courses/ENGR110_2022T2/LectureSchedule">Lecture Schedule</a>
+</li> <li> <a href="/Courses/ENGR110_2022T2/Assignments">Assignments</a>
+</li> <li> <a href="/Courses/ENGR110_2022T2/Tutorials">Tutorials</a>
+</li> <li> <a href="https://apps.ecs.vuw.ac.nz/submit/ENGR110">Submission</a>
+</li> <li> <a href="/cgi-bin/yabb/YaBB.pl?board=ENGR110_2022T2">Forum</a>
+</li> <li> <a href="https://blackboard.vuw.ac.nz/webapps/blackboard/execute/launcher?type=Course&amp;id=_116591%20_1">Blackboard</a>
+</li></ul> 
+<!--   * <a href="https://victoria.rl.talis.com/lists/NOT_SET.html">Reading List</a>-->
+</li>
+			 </ul>
+		  </li>
+		</ul>
+	 </nav>
+  </div>
+</div>
+<header class="site-header">
+  <div class="centraliser block">
+	 <!-- Logotype -->
+	 <div class="logo">
+		<a href="https://www.wgtn.ac.nz" title="Victoria University of Wellington homepage">
+		  <picture>
+		  <source media="(max-width: 1087px)" srcset="/vic-ui-kit/images/logo-white-full.svg">
+			 <img src="/vic-ui-kit/images/logo-white-full.svg" alt="Victoria University of Wellington - Te Whare Wānanga o te Ūpoko o te Ika a Māui">
+		  </picture>
+		</a>
+	 </div>
+	 <!-- Site name and header block -->
+	 <div class="site-intro">
+		<a href="https://www.wgtn.ac.nz/ecs" title="School of Engineering and Computer Science homepage">
+		  <h1>
+			 <span class="preline">School of</span>
+			 Engineering and Computer Science
+			 <small lang="mi">Te Kura Mātai Pūkaha, Pūrorohiko</small>
+		  </h1>
+		</a>
+	 </div>
+  </div>
+</header> 
+<a href="javascript:;" id="btn-up" title="Go to the top of the page" class="btn-floating sticky bottom" tabindex="-1"><span class="icon-arrow-up"></span></a>
+<section class="layout centraliser block foswikiPage"> 
+<div class="sidebar">
+  <nav class="site" role="navigation">
+	 <ul>
+		<li><a class="foswikiCurrentWebHomeLink" href="/Courses/ENGR110_2022T2/WebHome">ENGR110 home</a> <ul>
+<li> <a href="/Courses/ENGR110_2022T2/CourseOutline">Course Outline</a>
+</li> <li> <a href="https://ecs.wgtn.ac.nz/Courses/ENGR110_2022T2/WeeklyTimeTable">TimeTable</a>
+</li> <li> <a href="/Courses/ENGR110_2022T2/LectureSchedule">Lecture Schedule</a>
+</li> <li> <a href="/Courses/ENGR110_2022T2/Assignments">Assignments</a>
+</li> <li> <a href="/Courses/ENGR110_2022T2/Tutorials">Tutorials</a>
+</li> <li> <a href="https://apps.ecs.vuw.ac.nz/submit/ENGR110">Submission</a>
+</li> <li> <a href="/cgi-bin/yabb/YaBB.pl?board=ENGR110_2022T2">Forum</a>
+</li> <li> <a href="https://blackboard.vuw.ac.nz/webapps/blackboard/execute/launcher?type=Course&amp;id=_116591%20_1">Blackboard</a>
+</li></ul> 
+<!--   * <a href="https://victoria.rl.talis.com/lists/NOT_SET.html">Reading List</a>-->
+</li>
+	 </ul>
+  </nav> 
+</div> 
+	 <div class="content-panel"><nav aria-label="breadcrumb" role="navigation"><ul class="breadcrumbs block"><li><a href="https://ecs.wgtn.ac.nz/">School of Engineering and Computer Science</a></li><li><a href="/Courses/ENGR110_2022T2/">Courses/ENGR110_2022T2</a></li><li><a href="/Courses/ENGR110_2022T2/LectureSchedule">Lecture Schedule</a></li><li><a href="/Courses/ENGR110_2022T2/Assignments">Assignments</a></li><li>MLAssign1</li></ul></nav>
+<main>
+<div class="block formatting">
+  <div class="foswikiTopic">
+<p></p>
+<h1 id="Machine_Learning_Assignment_1">  Machine Learning Assignment 1  </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Machine_Learning_Assignment_1"> Machine Learning Assignment 1 </a> <ul>
+<li> <a href="#Simple_neuron_output_45_classifying_inputs_into_2_categories"> Simple neuron output - classifying inputs into 2 categories </a>
+</li> <li> <a href="#Submission"> Submission </a>
+</li> <li> <a href="#Marks"> Marks </a>
+</li> <li> <a href="#Appendix_1_45_Alternative_way_to_get_the_graphs"> Appendix 1 - Alternative way to get the graphs </a>
+</li> <li> <a href="#Appendix_2:_software_template"> Appendix 2: software template </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+This Assignment is preparation for the ML Project. We start with simple
+example and gradually introduce more code until we have more functional
+neural network code.
+All coding is done in C++.
+<p></p>
+<strong>Submission is due on 8 August, Monday, midnight</strong>
+<p></p>
+4% percent of course marks. Not a group assignment.
+<p></p>
+<p></p>
+<h2 id="Simple_neuron_output_45_classifying_inputs_into_2_categories">  Simple neuron output - classifying inputs into 2 categories  </h2>
+<p></p>
+<p></p>
+As a start we will tune single neuron.
+Training data set is shown below in the Table 1 and in graphical form in Fig.1.
+<p></p>
+Table 1: Training set
+<p></p>
+      <table class="foswikiTable"> 
+	<tbody>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol"> x<sub>0</sub> </td>
+			<td class="foswikiTableCol1"> x<sub>1</sub> </td>
+			<td class="foswikiTableCol2"> Target t </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> Tuned neuron output <img style="vertical-align:middle;" align="middle" width="265" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexdf101314ea37c56fa8c42a8431d1859e.png" alt="$y=\sigma(b_{opt} + w_{0opt} \cdot x_0 + w_{1opt} \cdot x_1)$" /> </td>
+		</tr>
+		<tr class="foswikiTableEven">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 0 </td>
+			<td class="foswikiTableCol1"> 0 </td>
+			<td class="foswikiTableCol2"> 1 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> about 1 </td>
+		</tr>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 0 </td>
+			<td class="foswikiTableCol1"> 1 </td>
+			<td class="foswikiTableCol2"> 1 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> about 1 </td>
+		</tr>
+		<tr class="foswikiTableEven">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1 </td>
+			<td class="foswikiTableCol1"> 0 </td>
+			<td class="foswikiTableCol2"> 1 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> about 1 </td>
+		</tr>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> 1 </td>
+			<td class="foswikiTableCol1 foswikiLast"> 1 </td>
+			<td class="foswikiTableCol2 foswikiLast"> 0 </td>
+			<td class="foswikiTableCol3 foswikiLastCol foswikiLast"> about 0 </td>
+		</tr>
+	</tbody> </table>
+<p></p>
+<div  class='imageFrame imageFrame_center ' style='width:220px'><a href='/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/zone1.png' class='imageHref' title='Training set'  data-orig-width='588' data-orig-height='532'><img src='/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/igp_b2ff4b463ba03a5ca86193f988f08b5d_zone1.png' alt='zone1.png' width='221' height='200'    /></a><div class='imageCaption'><div class='imageCaptionBackground'></div><div class='imageCaptionContent'>Training set</div></div></div><p></p>
+Neuron equation is: <img style="vertical-align:middle;" align="middle" width="209" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexe0961e05abbe596de3eef864106decbd.png" alt="$ y = \sigma(b + w_0 \cdot x_0 + w_1 \cdot x_1)$" />, where
+sigmoid function <img style="vertical-align:middle;" align="middle" width="48" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexbf95c545312a50a01ff21da4d2ff91e7.png" alt="$\sigma(y)$" /> is
+<img style="vertical-align:middle;" align="middle" width="111" height="26" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex121d0b4c893348ffd3aff1ad7a59f397.png" alt="$\sigma(z) = \frac{1}{1+e^{-z}}$" />
+<p></p>
+Our goal is to find such values of neuron parameters <img style="vertical-align:middle;" align="middle" width="38" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex43873bf173dbac52ab20f77f1a26f0c4.png" alt="$w_0$" />, <img style="vertical-align:middle;" align="middle" width="38" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex2134fda89c19542036f7722888f49f4e.png" alt="$w_1$" /> and <img style="vertical-align:middle;" align="middle" width="26" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex2cc3ee417308a965462a342fa66a1f37.png" alt="$b$" />  that difference between neuron output y and target <img style="vertical-align:middle;" align="middle" width="25" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexfffc61e2e35af9825d9dbec4238966ec.png" alt="$t$" /> is minimum for all four points <img style="vertical-align:middle;" align="middle" width="70" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex78426c510b243d6a97323d33c4ae447c.png" alt="$(x_0,x_1)$" /> specified in Table 1. 
+<p></p>
+Neuron output <img style="vertical-align:middle;" align="middle" width="26" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexf1e6c0c973c5703427ef16729365c55b.png" alt="$y$" /> flips from 0 to 1 when <img style="vertical-align:middle;" align="middle" width="188" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex4864c967a27d606b9624ac829a23fa59.png" alt="$ b + w_0 \cdot x_0 + w_1 \cdot x_1=0 $" />. Then <img style="vertical-align:middle;" align="middle" width="91" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexa399f11bc0c07dd0452a65653510ed2b.png" alt="$\sigma(0)=0.5$" />.
+<p></p>
+For <img style="vertical-align:middle;" align="middle" width="34" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex6ca179b59d3726b8766c8cabb9843109.png" alt="$x_0$" /> and <img style="vertical-align:middle;" align="middle" width="34" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex05be6773a6301c35c2211d9aecb2e583.png" alt="$x_1$" /> it is an equation of straight line. 
+<p></p>
+To see that we can re-write equation as <img style="vertical-align:middle;" align="middle" width="182" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex4b360efe55459369989a65edd21fe678.png" alt="$ x_1 = b / w_1 + w_0 /w_1 \cdot x_0  $" />
+<p></p>
+So we start with ...
+<p></p>
+<p></p>
+<p></p>
+<span class='foswikiNavyFG'>
+<hr />
+<strong>Exercise 1</strong> - classifying manually
+<p></p>
+Using Fig.1 as a template draw single straight line which separates two regions: one region
+contains all 0s (red got)  and another region which contains all 1s(green dot).  Include the picture into your report.
+<hr />
+</span>
+<p></p>
+Now we will train the neuron to do same thing as you just did using only Table 1.
+<p></p>
+Download, compile, link and run program <strong>ML_lab1.cpp.</strong>
+For brief program description see Appendix 2.
+Read the Appendix and the code. Understand what each function does. 
+We will be extending this code up to the Project so understanding it is advised.  
+<p></p>
+<p></p>
+We try to search for optimum combination manually entering neuron parameters.
+<p></p>
+<span class='foswikiNavyFG'>
+<hr />
+<strong>Exercise 2</strong> - manual entry
+Complete function total_error() - it should add together squares of errors for all training points.<br>
+Complete function void manual_entry(Neuron&amp; n,train set t ts) (see below for requirements). 
+<hr />
+</span>
+This function should: <ul>
+<li> ask user for values of neuron <strong>bias</strong>, <strong>weights[0]</strong> and <strong>weights[1]</strong>
+</li> <li> make variable <strong>total_error</strong> and set it to 0.
+</li> <li> run for cycle 4 times, one for each training sample <ul>
+<li> calculate neuron y and z and training sample inputs(there is already function <strong>forward()</strong> which does that, call it)
+</li> <li> calculate error for this sample (there is function for this too, read the code)
+</li> <li> add error to <strong>total_error</strong>
+</li></ul> 
+</li> <li> print value of <strong>total_error</strong>
+</li></ul> 
+<p></p>
+Entering values of <img style="vertical-align:middle;" align="middle" width="38" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex2134fda89c19542036f7722888f49f4e.png" alt="$w_1$" />, <img style="vertical-align:middle;" align="middle" width="38" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex30e0b95cedce50e611a97f3611ef717b.png" alt="$w_2$" /> and <img style="vertical-align:middle;" align="middle" width="26" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex2cc3ee417308a965462a342fa66a1f37.png" alt="$b$" /> manually and looking for values which provide minimum error <img style="vertical-align:middle;" align="middle" width="53" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex7c09f21aef809218c75782b7cde5f77c.png" alt="$y-t$" /> would take too long. Lets automate the search.
+<p></p>
+<span class='foswikiNavyFG'>
+<hr />
+<strong>Exercise 3</strong> - global search
+<p></p>
+Complete the function <strong>void</strong> <strong>global_search(neuron,train_set)</strong> (details below)
+<hr />
+</span>
+<p></p>
+Complete the function <strong>void global_search(neuron,train\_set)</strong> <ul>
+<li> In this function run three nested cycles for <strong>b</strong>, <strong>w0</strong> and <strong>w1</strong>.
+</li> <li> For each run of the cycles calculate <strong>total_error</strong>, same way as you did for previous Exercise. 
+</li> <li> Remember best (providing minimum <strong>total_error</strong>) values of <strong>b</strong>,$w_{0}$ and	$w_{1}$ 
+</li> <li> After cycles finished, print <strong>b</strong>, <strong>w0</strong> and <strong>w1</strong> values together with value of <strong>total_error</strong> 
+</li></ul> 
+<p></p>
+<p></p>
+Now that we found optimum values (minimum total error) of <img style="vertical-align:middle;" align="middle" width="26" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex2cc3ee417308a965462a342fa66a1f37.png" alt="$b$" />, <img style="vertical-align:middle;" align="middle" width="38" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex43873bf173dbac52ab20f77f1a26f0c4.png" alt="$w_0$" /> and <img style="vertical-align:middle;" align="middle" width="38" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex2134fda89c19542036f7722888f49f4e.png" alt="$w_1$" /> lets compare the result with our guess.
+We will plot the line <img style="vertical-align:middle;" align="middle" width="229" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex05a725b4b9e35b58f5e7e3437190bd10.png" alt="$  b + w0_{opt} \cdot x0 + w1_{opt} \cdot x1 = 0 $" />. 
+On one side of the line neuron output <img style="vertical-align:middle;" align="middle" width="26" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexf1e6c0c973c5703427ef16729365c55b.png" alt="$y$" /> will be 1 (or close) and on another side <img style="vertical-align:middle;" align="middle" width="26" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexf1e6c0c973c5703427ef16729365c55b.png" alt="$y$" /> will be close to 0.
+<p></p>
+<span class='foswikiNavyFG'>
+<hr />
+<strong>Exercise 4</strong>
+<p></p>
+ Using Excel or any other software plot the line
+ <img style="vertical-align:middle;" align="middle" width="195" height="28" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex86d6716dbfd1ea9d9ea991fed9d10027.png" alt="$x_1 = -\frac{b_{opt}}{w_{1,opt}} - x_0 \cdot \frac{w_{0,opt}}{w_{1,opt}}$" />
+ Use optimum values from Exercise 3.
+<p></p>
+ You can use "boundary_plot.cpp" program. It asks for values of bias, weights and produces image svg (Scalar Vector Graphics) file.You can open svg file with web browser.
+ Include the plot in your report. Comment on similarity (or lack of it) between your guess (Exercise 1) and this search result. 
+<hr />
+</span>
+<p></p>
+So far our search was rather naive - we looked at all possible combinations of bias and weights and it took a long time.
+We can accelerate the search by using gradient. 
+<p></p>
+<p></p>
+<span class='foswikiNavyFG'>
+<hr />
+<strong>Exercise 5</strong>
+<p></p>
+Complete function: <strong>void</strong> <strong>gradient_search(Neuron&amp;</strong> <strong>neuron</strong>,*const* <strong>train_set_t&amp;</strong> <strong>train_set)</strong>.
+<hr />
+</span>	
+<p></p>
+ Introduce variables to store the slopes <img style="vertical-align:middle;" align="middle" width="34" height="24" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexe37bd33d4e1c72a6c450d2e6b50b03ad.png" alt="$\frac{de}{db}$" />, <img style="vertical-align:middle;" align="middle" width="45" height="26" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latex480516bd40056c567f0e00704d3f13b1.png" alt="$\frac{de}{dw_{0}}$" /> and <img style="vertical-align:middle;" align="middle" width="45" height="26" src="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/latexc15ff1d77e858141f6ef5a48005049d4.png" alt="$\frac{de}{dw_{1}}$" /> .
+<p></p>
+ Introduce variables for maximum number of search steps and learning rate (make it 1.0 for now).\ Make <strong>while()</strong> operator to loop until search step is less than maximum number.
+ For each cycle of the loop: <ul>
+<li> Run <strong>for()</strong> cycle for each of training samples - we have 4 samples <ul>
+<li> Calculate error for this sample - call it <strong>e0</strong>
+</li> <li> For all weights and bias estimate slope of error.  <ul>
+<li> Increase bias by small amount <strong>d</strong> (about 0.01). 
+</li> <li> Calculate error again - call it <strong>e1</strong>. 
+</li> <li> Calculate slope(derivative) as <strong>de_db=(e1-e0)/d</strong>. Store it. 	 * Return bias to original value
+</li> <li> Increase <strong>w0</strong> by small amount <strong>d</strong> (about 0.01). 
+</li> <li> Calculate error again - call it <strong>e1</strong>. 
+</li> <li> Calculate slope(derivative) as <strong>dw0_db=(e1-e0)/d</strong>. Store it. 	 * Return bias to original value
+</li> <li> Do same for <strong>w1</strong> 
+</li></ul> 
+</li> <li> Make step accordingly to slope values and learning rate: b=b-de_db*lr;w0= 
+</li> <li> Calculate <strong>total_error</strong> and print it on the screen together with search step number  Run program several times to check that search converges (error goes down). Note how many steps it take for error to become small (less than 0.01).
+</li></ul> 
+</li></ul> 
+<p></p>
+<p></p>
+We provide vector of double called <strong>convergence</strong> and function <strong>void</strong> <strong>save_vector_to_file(vector<double></strong> <strong>v)</strong> for 
+next exercise. To plot the convergence <strong>push_back</strong> value of total error into this vector.
+<p></p>
+<span class='foswikiNavyFG'>
+<hr />
+<strong>Exercise 6</strong>
+<p></p>
+Run several searches with different values of <strong>learning_rate</strong>, at least
+try 0.1; 1.0; 5.0; 10.0; 30.0. Every time save <strong>convergence</strong>.
+<p></p>
+Plot convergence of the <strong>error</strong> versus number of search steps for different values of <strong>learning_rate</strong> on the same graph.
+<p></p>
+Explain what is happening with search convergence as <strong>learning_rate</strong> increases.
+<hr />
+</span>
+<p></p>
+<h2 id="Submission">  Submission  </h2>
+   <strong>Reflection:</strong> Please submit .pdf file. This file should include: <ul>
+ <li>
+ <ul>
+<li> Exercise 1 - submit your picture
+</li> <li> Exercise 2 - 1) what is criteria to decide which combination of $bias, w_0, w_1$ is better\  	                   2) why neuron is passed into the function by reference? 
+</li> <li> Exercise 4 - submit the picture 
+</li> <li> Exercise 6 - submit the picture with explanation of how  search is influenced by learning rate 
+</li></ul> 
+</li></ul> 
+<p></p>
+   <strong>Code:</strong> Submit modified code with function you programmed. Marking will be done by un commenting functions in <strong>main()</strong> one after another. 
+<p></p>
+Code should compile and run on ECS computers. If code does not compile - for this Exercise is 0. 
+<p></p>
+<p></p>
+<h2 id="Marks">  Marks  </h2>
+<p></p>
+					 			<table class="foswikiTable">	
+	<tbody>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Exercise </td>
+			<td class="foswikiTableCol1"> Code </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Reflection </td>
+		</tr>
+		<tr class="foswikiTableEven">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1 </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 10 </td>
+		</tr>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 2 </td>
+			<td class="foswikiTableCol1"> 10 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 5 </td>
+		</tr>
+		<tr class="foswikiTableEven">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 3 </td>
+			<td class="foswikiTableCol1"> 20 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 4 </td>
+			<td class="foswikiTableCol1"> 20 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 5 </td>
+			<td class="foswikiTableCol1"> 15 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> 6 </td>
+			<td class="foswikiTableCol1 foswikiLast"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> 20 </td>
+		</tr>
+	</tbody>	</table>
+<p></p>
+<p></p>
+<h2 id="Appendix_1_45_Alternative_way_to_get_the_graphs">  Appendix 1 - Alternative way to get the graphs  </h2>
+<p></p>
+You can use visualization software called <strong>gnuplot</strong> in this assignment.
+ You can find it at <a href="http://www.gnuplot.info">GNUPLOT</a>.
+ You can start it using command line interface by typing <strong>gnuplot</strong>.
+<p></p>
+There is script called <b>gplot</b> to display 2D output of the neuron&gt; Download it from Attachments and put into same folder your program is.
+<p></p>
+ If there is a text file name <strong>gs1.txt</strong> with 2 whitespace
+separated columns,
+<pre> 
+0 453
+1 427
+2 403
+3 379
+4 357
+</pre>
+<p></p>
+you can plot second column value versus first column using <strong>plot</strong> <strong>"gs1.txt"</strong> <strong>using</strong> <strong>1:2</strong> <strong>with</strong> <strong>lines</strong>.
+<p></p>
+You can plot several graphs from separate files in one figure using <strong>plot</strong> <strong>"gs1.txt"</strong> <strong>using</strong> <strong>1:2</strong> <strong>with</strong> <strong>lines,</strong> <strong>"gs2.txt"</strong> <strong>using</strong> <strong>1:2</strong> <strong>with</strong> <strong>lines</strong>.
+ If file contains three columns you can plot value in 3rd column as
+z against first two columns as $(x,y)$ using \textbf{splot 'ex2plot.txt'}
+<p></p>
+<h2 id="Appendix_2:_software_template"> Appendix 2: software template </h2>
+<p></p>
+Code template:
+There are two *struct*s:
+<pre class='cplusplus'>
+// one point/sample of training set. 
+struct train&#95;point&#95;t{
+   std::vector&#60;double&#62; inputs;
+   double target;
+};
+
+//vector of training samples
+struct train&#95;set&#95;t{
+  std::vector&#60;train&#95;point&#95;t&#62; train&#95;points;   
+};
+
+</pre>
+<p></p>
+This one describes one neuron:
+<p></p>
+<pre class='cplusplus'>
+double sigmoid(double x){
+    return 1.0 / (1.0 + exp(-x));
+}
+struct Neuron{
+   std::vector&#60;double&#62; weights;   // weights
+   double bias;
+   double z; // before sigmoid
+   double y; // outputs
+   void init(int nw);
+   double forward(std::vector&#60;double&#62; inputs);
+   void print&#95;neuron();
+};
+
+// calculates output
+double Neuron::forward(std::vector&#60;double&#62; inputs){
+   z &#61; bias;
+   for (unsigned int i &#61; 0 ; i &#60; weights.size() ; i++){
+      z &#61; z + weights&#91;i&#93;&#42;inputs&#91;i&#93;;
+   }
+   // shorter version
+//   z &#61; std::inner&#95;product(weights, weights + nw,inputs.begin(),bias);
+   y &#61;  sigmoid(z);
+   return y;
+}
+
+</pre>
+<p></p>
+<p></p>
+	\centering
+	\includegraphics[width=0.7\linewidth]{soft}
+	\caption{Assignment data structure}
+	\label{fig:soft}
+\end{figure}
+<p></p>
+Notice: if you modify the program we recommend that you use <strong>-O3</strong> option for compiler (full optimization for speed). 
+For details see \url{https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc/Optimize-Options.html#Optimize-Options}. Without using speed optimization program will not run fast enough.  
+<p></p> </div><!-- /foswikiTopic-->
+  <div class="foswikiContentFooter"></div><div class="foswikiFormSteps"><div class="foswikiAttachments foswikiFormStep" style="overflow:auto">
+<div class="twistyPlugin foswikiMakeVisible"><span id="topicattachmentslist1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited1"><a class="patternTwistyButton" href="#"><img src="/foswiki/pub/System/DocumentGraphics/toggleopen.png" border="0" alt="" /><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>7</span></span></a></span><span id="topicattachmentslist1hide" style="" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited1"><a class="patternTwistyButton" href="#"><img src="/foswiki/pub/System/DocumentGraphics/toggleclose.png" border="0" alt="" /><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>7</span></span></a></span></div><div class="twistyPlugin"><div id="topicattachmentslist1toggle" style="" class="twistyRememberSetting twistyContent twistyInited1">
+<table class="foswikiTable" id="tableMLAssign13">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=0;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">I</a> </th>
+			<th class="foswikiTableCol1"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=1;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">Attachment</a> </th>
+			<th class="foswikiTableCol2"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=2;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">Action</a> </th>
+			<th class="foswikiTableCol3"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=3;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">Size</a> </th>
+			<th class="foswikiTableCol4"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=4;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">Date</a> </th>
+			<th class="foswikiTableCol5"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=5;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">Who</a> </th>
+			<th class="foswikiTableCol6 foswikiLastCol"> <a href="/Courses/ENGR110_2022T2/MLAssign1?sortcol=6;table=3;up=0#sorted_table" rel="nofollow" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/c.png' width='16' height='16' alt='ML_lab1.cpp' /></span><span class="foswikiHidden">cpp</span> </td>
+			<td class="foswikiTableCol1"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/ML_lab1.cpp">ML_lab1.cpp</a> </td>
+			<td class="foswikiTableCol2"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=ML_lab1.cpp;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 5 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">11 Jul 2022 - 14:00</span> </td>
+			<td class="foswikiTableCol5"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/html.png' width='16' height='16' alt='Train_set_2D.html' /></span><span class="foswikiHidden">html</span> </td>
+			<td class="foswikiTableCol1"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/Train_set_2D.html">Train_set_2D.html</a> </td>
+			<td class="foswikiTableCol2"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=Train_set_2D.html;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 4 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">27 Jul 2022 - 12:04</span> </td>
+			<td class="foswikiTableCol5"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/c.png' width='16' height='16' alt='boundary_plot.cpp' /></span><span class="foswikiHidden">cpp</span> </td>
+			<td class="foswikiTableCol1"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/boundary_plot.cpp">boundary_plot.cpp</a> </td>
+			<td class="foswikiTableCol2"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=boundary_plot.cpp;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 5 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">15 Jul 2022 - 10:37</span> </td>
+			<td class="foswikiTableCol5"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/svg.png' width='16' height='16' alt='display_plot.svg' /></span><span class="foswikiHidden">svg</span> </td>
+			<td class="foswikiTableCol1"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/display_plot.svg">display_plot.svg</a> </td>
+			<td class="foswikiTableCol2"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=display_plot.svg;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 2 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">12 Jul 2022 - 14:03</span> </td>
+			<td class="foswikiTableCol5"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/else.png' width='16' height='16' alt='gplot' /></span><span class="foswikiHidden">EXT</span> </td>
+			<td class="foswikiTableCol1"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/gplot">gplot</a> </td>
+			<td class="foswikiTableCol2"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=gplot;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 166 bytes </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">03 Aug 2022 - 14:57</span> </td>
+			<td class="foswikiTableCol5"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/png.png' width='16' height='16' alt='nn0.png' /></span><span class="foswikiHidden">png</span> </td>
+			<td class="foswikiTableCol1"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/nn0.png">nn0.png</a> </td>
+			<td class="foswikiTableCol2"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=nn0.png;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 11 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">11 Jul 2022 - 13:21</span> </td>
+			<td class="foswikiTableCol5"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <span class='foswikiIcon'><img src='/foswiki/pub/System/DocumentGraphics/png.png' width='16' height='16' alt='zone1.png' /></span><span class="foswikiHidden">png</span> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="/foswiki/pub/Courses/ENGR110_2022T2/MLAssign1/zone1.png">zone1.png</a> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <a href="/foswiki/bin/attach/Courses/ENGR110_2022T2/MLAssign1?filename=zone1.png;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3 foswikiLast" style="text-align:right"> 16 K </td>
+			<td class="foswikiTableCol4 foswikiLast"> <span class="foswikiNoBreak">12 Jul 2022 - 13:04</span> </td>
+			<td class="foswikiTableCol5 foswikiLast"> Main.arthur </td>
+			<td class="foswikiTableCol6 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+</div></div></div><div class="patternTopicActions foswikiFormStep"><span class="patternActionButtons">
+<span><a href='/Courses/ENGR110_2022T2/MLAssign1?cover=print;' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='foswikiAccessKey'>P</span>rint version</a></span><span class='foswikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/Courses/ENGR110_2022T2/MLAssign1?template=backlinksweb' rel='nofollow' title='Search the Courses/ENGR110_2022T2 Web for topics that link to here' accesskey='b'><span class='foswikiAccessKey'>B</span>acklinks</a></span><span class='foswikiSeparator'>&nbsp;|&nbsp;</span></span></div></div>
+</div>
+</main>
+	 </div>
+  </section> 
+<footer role="contentinfo">
+  <section class="footer-secondary two-columns">
+	 <div class="centraliser">
+		<!-- Sub-site's related or recommended links -->
+		<div class="block">
+		  <h2>Useful links</h2>
+		  <nav role="navigation">
+				<ul role="menubar"> <ul>
+<li> <a href="https://www.wgtn.ac.nz/engineering/study/undergraduate">Undergraduate study</a>
+</li> <li> <a href="https://www.wgtn.ac.nz/engineering/study/postgraduate">Postgraduate study</a>
+</li> <li> <a href="https://www.wgtn.ac.nz/engineering/research/ecs">Research groups</a>
+</li> <li> <a href="https://www.wgtn.ac.nz/engineering/school-of-engineering-and-computer-science/staff">Staff</a>
+</li> <li> <a href="https://ecs.wgtn.ac.nz/Main">Wiki</a>
+</li></ul> 
+<div class="patternLeftBarPersonal">
+<div class="patternLeftBarPersonalContent"><ul><li><a href="/foswiki/bin/edit/Sidebar/greenthomLeftBar?templatetopic=Main.WebLeftBarPersonalTemplate&amp;topicparent=greenthom">
+Create personal sidebar</a></li></ul>
+</div></div>
+</ul>
+		  </nav>
+		</div>
+		<!-- Sub-site's related links -->
+		<div class="block contacts">
+		  <a href="https://www.wgtn.ac.nz/ecs/about/contact" title="See all contact information" class="link-more">More contacts</a>
+<p></p>
+		  <h2>Useful contacts</h2>
+		  <address>
+			 <!-- Phone numbers -->
+			 <ul class="phones">
+				<li><a href="tel:+64 4 463 5341" title="Call ECS">+64 4 463 5341</a> </li>
+			 </ul>
+			 <!-- Mail addresses -->
+			 <ul class="mails">
+				<li> <a href="mailto:office@ecs.vuw.ac.nz" title="Send an email to ECS">office@ecs.vuw.ac.nz</a> </li>
+			 </ul>
+		  </address>
+		</div>
+	 </div>
+  </section>
+  <!-- Footer Related links from global site -->
+  <section class="footer-secondary">
+	 <div class="centraliser">
+		<div class="block">
+		  <h2>Victoria University of Wellington</h2>
+		  <nav role="navigation">
+			 <ul role="menubar">
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/about/campuses-facilities/faculties-schools" role="menuitem" title="Read about Faculties">Faculties</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/about/contacts" role="menuitem" title="Read about Contacts and directories">Contacts and directories</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/about/campuses-facilities" role="menuitem" title="Read about Campuses">Campuses</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/study" role="menuitem" title="Read about Study">Study</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/students" role="menuitem" title="Read about Students">Students</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/staff" role="menuitem" title="Read about Staff">Staff</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/about/careers" role="menuitem" title="Read about Careers">Careers</a></li>
+				<li role="menuitem"><a href="https://www.wgtn.ac.nz/engage/alumni" role="menuitem" title="Read about Alumni">Alumni</a></li>
+			 </ul>
+		  </nav>
+		</div>
+	 </div>
+  </section>
+  <!-- Meta-links and contacts that are shared between sub-sites -->
+  <section class="footer-primary">
+	 <div class="centraliser">
+		<div class="block">
+		  <!-- Smaller version of logotype -->
+		  <div class="logo">
+			 <a href="https://www.wgtn.ac.nz" title="Victoria University of Wellington homepage">
+				<img class="logo" src="/vic-ui-kit/images/logo-white-full.svg" alt="Victoria University of Wellington - Te Whare Wānanga o te Ūpoko o te Ika a Māui">
+			 </a>
+		  </div>
+		  <!-- Global contacts -->
+		  <ul class="contacts">
+			 <li>
+				<a title="Call Victoria 0800 number" href="tel:+64800040404">0800 04 04 04</a>
+			 </li>
+			 <li>
+				<a title="Call Victoria about general enquiries" href="tel:+6444721000">+64 4 472 1000</a>
+			 </li>
+			 <li>
+				<a title="Write Victoria an email" href="mailto:info@vuw.ac.nz">info@vuw.ac.nz</a>
+			 </li>
+			 <li>Emergency: <a title="Call in case of emergency" href="tel:+6444639999">+64 4 463 9999</a> or ext. 8888 (internal)</li>
+		  </ul>
+		</div>
+		<div class="block small">
+		  <nav role="navigation">
+			 <ul role="menubar" class="minilinks">
+				<li role="menuitem"><a title="See ..." href="https://www.wgtn.ac.nz/site-info">Site info</a></li>
+				<li role="menuitem"><a title="See ..." href="https://www.wgtn.ac.nz/site-info/site-map">Site map</a></li>
+				<li role="menuitem"><a title="See ..." href="https://www.wgtn.ac.nz/site-info/feedback">Feedback</a></li>
+				<li role="menuitem"><a title="See ..." href="https://www.wgtn.ac.nz/site-info/glossary">Glossary</a></li>
+			 </ul>
+		  </nav>
+		  <small class="copyright">Copyright &copy; Victoria University of Wellington, New Zealand</small>
+		</div>
+	 </div>
+  </section>
+</footer>
+<script src="/vic-ui-kit/js/toolkit.min.js"></script>
+<p></p>
+</body></html>
